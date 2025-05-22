@@ -1,0 +1,137 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 50% 98%;
+    --foreground: 240 10% 3.9%;
+    
+    --card: 240 20% 96%;
+    --card-foreground: 240 10% 3.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    --primary: 255 92% 76%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    
+    --accent: 254 89% 94%;
+    --accent-foreground: 240 5.9% 10%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 5.9% 85%;
+    --input: 240 5.9% 90%;
+    --ring: 255 92% 76%;
+    
+    --radius: 0.75rem;
+
+    --sidebar-background: 254 60% 97%;
+    --sidebar-foreground: 240 10% 3.9%;
+    --sidebar-primary: 255 92% 76%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 254 89% 94%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 254 60% 97%;
+    --sidebar-ring: 255 92% 76%;
+  }
+
+  .dark {
+    --background: 240 20% 12%;
+    --foreground: 0 0% 95%;
+    
+    --card: 240 20% 16%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 240 20% 16%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 255 92% 76%;
+    --primary-foreground: 240 5.9% 10%;
+    
+    --secondary: 240 10% 20%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 10% 20%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    --accent: 240 10% 24%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 255 92% 76%;
+
+    --sidebar-background: 240 20% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 255 92% 76%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 10% 24%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 10% 20%;
+    --sidebar-ring: 255 92% 76%;
+  }
+
+  * {
+    @apply border-border;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.dashboard-card {
+  @apply bg-card border border-border rounded-xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md;
+}
+
+.progress-ring-container {
+  @apply relative flex items-center justify-center;
+}
+
+.progress-ring {
+  @apply text-purple-200 dark:text-purple-900;
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+  @apply text-purple-500;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-ring-text {
+  @apply absolute text-xs font-medium;
+}
+
+.music-player {
+  @apply bg-card p-4 rounded-xl border border-border shadow-sm;
+}
+
+.music-player-button {
+  @apply h-8 w-8 rounded-full flex items-center justify-center bg-primary/20 text-primary hover:bg-primary/30 transition-colors;
+}
+
+.music-player-progress {
+  @apply h-1 bg-muted rounded-full overflow-hidden;
+}
+
+.music-player-progress-bar {
+  @apply h-full bg-primary;
+}
